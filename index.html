@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotton Candy Moments - Photobooth</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Cotton Candy Moments</h1>
+            <p>Buat kenangan manismu!</p>
+        </header>
+
+        <main class="photobooth" role="main">
+            <!-- Area Kamera & Hasil Foto -->
+            <section class="camera-output" aria-label="Area tampilan kamera dan hasil foto">
+                <video id="video" autoplay playsinline aria-label="Feed kamera langsung"></video>
+                <canvas id="canvas"></canvas>
+                <img id="photo" alt="Hasil foto Anda" aria-label="Foto yang sudah diambil">
+                <div class="placeholder" id="placeholder">
+                    <p>Mohon izinkan akses kamera untuk memulai...</p>
+                    <div class="loading-spinner"></div>
+                </div>
+                <!-- Efek kilat kamera -->
+                <div class="camera-flash" id="camera-flash"></div>
+            </section>
+
+            <!-- Panel Kontrol -->
+            <section class="controls" role="region" aria-label="Kontrol filter dan aksi kamera">
+                <!-- Pemilih Filter -->
+                <div class="filter-controls">
+                    <h3>Pilih Filter:</h3>
+                    <div class="filter-options" role="group" aria-label="Pilihan filter gambar">
+                        <button class="filter-btn active" data-filter="none" aria-label="Filter asli, tanpa efek">Asli</button>
+                        <button class="filter-btn" data-filter="pastel-dream" aria-label="Filter pastel dream, warna lembut">Pastel Dream</button>
+                        <button class="filter-btn" data-filter="sepia-classic" aria-label="Filter sepia klasik, efek jadul">Sepia Classic</button>
+                        <button class="filter-btn" data-filter="retro-90s" aria-label="Filter retro tahun 90an">Retro 90s</button>
+                        <button class="filter-btn" data-filter="sparkle" aria-label="Filter sparkle, efek berkilau">Sparkle</button>
+                    </div>
+                </div>
+
+                <!-- Tombol Aksi -->
+                <div class="action-controls">
+                    <button id="capture-btn" class="btn-capture" aria-label="Tombol untuk mengambil foto">
+                        <span>Ambil Foto</span>
+                    </button>
+                    <div class="post-capture-controls">
+                        <button id="retake-btn" class="btn-secondary" aria-label="Ambil ulang foto">Ulangi</button>
+                        <button id="download-btn" class="btn-primary" aria-label="Unduh foto ke perangkat">Unduh Foto</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
